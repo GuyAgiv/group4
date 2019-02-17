@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,148 @@
     <title>Our research</title>
 
     <style>
-    h1 {
-        width: 100%;
-    }
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    #backToTop {
-        position: fixed;
-        bottom: 0px;
-    }
+        h1 {
+            width: 100%;
+        }
 
-    table 
-    {
-        width: 700px;
-    }
+        #backToTop {
+            position: fixed;
+            bottom: 0px;
+        }
+
+        #ourTable {
+            width: 700px;
+            border: 2px solid darkturquoise;
+            margin: auto;
+        }
+
+        #pick
+        {
+            width: 100px;
+        }
+
+        td{
+            text-align: center;
+        }
+        th{
+            border: 1px solid black;
+        }
+
+
+
+        #sideMenu {
+            position: fixed;
+            vertical-align: top;
+            top: 200px;
+            width: 100px;
+        }
+
+        select {
+            margin: 10px 0px;
+        }
     </style>
 </head>
+
 <body>
-    <h1 id="top">Our Research</h1>
+    <h1 id="top" style="text-align: center">Our Research</h1>
 
-    <table>
+    <div id="tableSection">
 
-        <tr>
+        <table id="ourTable">
+            <tr>
                 <th>Student Name</th>
                 <th>Subject</th>
-        </tr>
+            </tr>
+        </table>
 
-    </table>
-    
+        <button type="button" id="pick">Pick One</button>
+    </div>
+    <form id="sideMenu">
+
+        <select id="names" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option>Guy Agiv</option>
+                    <option>Mariya Stashevski</option>
+                    <option>Amitay Levi</option>
+                    <option>Gabi Buchnik</option>
+                    <option>David Lev</option>
+                    <option>Shimon Hazan</option>
+                    <option>Yakir Solomon</option>
+                    <option>Ameer</option>
+                    <option>Evyatar </option>
+                    <option>Matan Atia</option>
+                    <option>Elinor Ga</option>
+                    <option>Moshiko </option>
+                    <option>Ofek Arbeli</option>
+                    <option>Hakiminash</option>
+                    <option>Stevenson</option>
+                    <option>Aviyot</option>
+                    <option>Lital</option>
+                    <option>Malak</option>
+                    <option>Gabsy</option>
+                    <option>David Sabag</option>
+                    <option>Daniel Barush</option>
+                    <option>Avi Adnahani</option>
+                    <option>Matan Diner</option>
+                </select>
+
+
+
+        <select id="subjects" required>
+                    <option value="default" disabled selected>Select subject</option>
+                    <option>S1</option>
+                    <option>S2</option>
+                    <option>S3</option>
+                    <option>S4</option>
+                    <option>S5</option>
+                    <option>S5</option>
+                    <option>S6</option>
+                </select>
+        <button type="button" onclick="addStudentToTable()">Submit</button>
+
+    </form>
+
+
+
     <a href="#top" id="backToTop">Back to top</a>
 
+    <script>
+        var ourTable = document.querySelector("#ourTable");
+
+        function addStudentToTable() {
+            var name = document.querySelector("#names");
+            var subject = document.querySelector("#subjects");
+            subject = subject.options[subject.selectedIndex].value;
+            name = name.options[name.selectedIndex].value;
+
+            if (name == "" || subject == "") {
+                alert("Please choose someone and subject!");
+            }
+            else {
+                var newRow = document.createElement("tr");
+                var newName = document.createElement("td");
+                var newSubject = document.createElement("td");
+
+                newName.innerText = name;
+                newSubject.innerText = subject;
+
+                newRow.appendChild(newName);
+                newRow.appendChild(newSubject);
+
+                ourTable.appendChild(newRow);
+            }
+
+
+        }
+    </script>
+
 </body>
+
 </html>
