@@ -1,17 +1,127 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-#page-container {
-    background-color: #503F67;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    border: 1px solid red;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ITube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-#leftWindow, #rightWindow {
-    background-color: #CDD8DD;
-}
+<body>
+    <div id="page-container">
 
+        <div id="leftWindow">
+            <iframe id="mainFrame"></iframe>
+        </div>
+
+        <div id="rightWindow">
+            <h2 id="rightWindowTitle">More Videos</h3>
+                <div id="thumbsScroll">
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog1 Video</h3>
+                        <h4>Just a dog # 1</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog2 Video</h3>
+                        <h4>Just a dog # 2</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog3 Video</h3>
+                        <h4>Just a dog # 3</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog4 Video</h3>
+                        <h4>Just a dog # 4</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog5 Video</h3>
+                        <h4>Just a dog # 5</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog6 Video</h3>
+                        <h4>Just a dog # 6</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog7 Video</h3>
+                        <h4>Just a dog # 7</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog8 Video</h3>
+                        <h4>Just a dog # 8</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog9 Video</h3>
+                        <h4>Just a dog # 9</h4>
+                    </div>
+                    <div class="thumbNail">
+                        <img></img>
+                        <h3>Dog10 Video</h3>
+                        <h4>Just a dog # 10</h4>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+    <div id="videoDetails">
+        <h2 id="videoTitle">Video Title</h2>
+        <h3 id="videoArtist">Artist Name</h3>
+        <h4 id="videoDescription">Description</h4>
+    </div>
+</body>
+
+    <script>
+        (function()
+        {
+            for(var i = 0; i < 10; i++)
+            {
+                loadVideo(i);
+                loadPicture(i);
+            }
+        })();
+
+        function loadVideo(idx)
+        {
+            fetch("https://random.dog/woof.json")
+                .then(function(resolvedStream){
+                    return resolvedStream.json();
+                }).then(function(video){
+                    if(video.url.indexOf(".mp4") > -1)
+                    {
+                        document.querySelectorAll(".thumbNail")[idx].onclick = function()
+                        {
+                           document.querySelector("#mainFrame").src = video.url;
+                           document.querySelector("#videoTitle").innerText = this.children[1].innerText;
+                           document.querySelector("#videoArtist").innerText = "Just a stupid dog singer"
+                           document.querySelector("#videoDescription").innerText = this.children[2].innerText;
+                        }
+                    }
+                    else
+                    {
+                        loadVideo(idx);
+                    }
+                });
+        }
+
+        function loadPicture(idx)
+        {
+            fetch("https://dog.ceo/api/breeds/image/random").then(function(resolvedStream){
+                return resolvedStream.json();
+            }).then(function(dogImg){
+                document.querySelectorAll(".thumbNail")[idx].children[0].src = dogImg.message;
+            });
+        }
+    </script>
+
+</html>
