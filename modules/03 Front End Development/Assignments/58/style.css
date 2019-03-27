@@ -1,17 +1,111 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
-
-#page-container {
+body{
     background-color: #503F67;
+}
+#page-container{
+
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    border: 1px solid red;
+    height: 70%;
+    width: 100%;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 10% 60% 30%;
+    justify-content: center;
+    grid-column-gap: 30px;
+    
 }
 
 #leftWindow, #rightWindow {
     background-color: #CDD8DD;
+
 }
 
+#mainFrame{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+#rightWindowTitle{
+    background-color: #748B92;
+    color: white;
+    height: 7%;
+    margin: 0;
+    padding: 0;
+}
+
+#thumbsScroll{
+    overflow-y: scroll;
+    display: block;
+    height: 93%;
+}
+
+#leftWindow {
+    height: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+}
+
+#rightWindow {
+    height: 100%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.thumbNail{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    margin-top: 20px;
+
+}
+
+.thumbNail > img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
+
+.thumbNail:hover{
+    cursor:pointer;
+    background-color: white;
+}
+
+.thumbNail > h3{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.thumbNail > h4{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#videoDetails{
+    text-align: center;
+    color: white;
+}
