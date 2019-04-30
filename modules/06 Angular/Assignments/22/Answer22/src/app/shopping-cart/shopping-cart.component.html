@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>
+            <select [(ngModel)]="selectedProduct">
+                <option *ngFor="let product of products" >{{ product }}</option>
+            </select>
+        </td>
+        <td #price>
+            <input type="number" min="0">
+        </td>
+        <td>
+            <button id="addBtn" (click)="addItem()">Add</button>
+        </td>
+    </tr>
+
+    <tr #prodRow *ngFor="let boughtProd of boughtProducts">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td><button type="button" (click)="onProductRemoved(prodRow)">Remove</button></td>
+    </tr>
+</table>

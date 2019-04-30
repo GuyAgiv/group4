@@ -1,0 +1,17 @@
+<div id="container">
+  <form #f (ngSubmit)="submitPayment()">
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" name="cardNum" ngModel #cNum="ngModel" required>
+
+    <label for="cardName">Card Name:</label>
+    <input type="text" id="cardName" name="cardName" ngModel #cName="ngModel" required>
+
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="date" id="expiryDate" name="expiryDate" ngModel #expDate="ngModel" required>
+
+    <label for="securityCode">Security Code:</label>
+    <input type="text" id="securityCode" name="securityCode" ngModel #secCode="ngModel" required maxlength="3">
+
+    <button >Submit</button>
+  </form>
+</div>
