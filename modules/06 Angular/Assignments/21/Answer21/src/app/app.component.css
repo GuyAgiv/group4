@@ -1,0 +1,70 @@
+
+#flex-container
+{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+#inputs-section
+{
+   
+}
+#watch-section{
+    border: 5px solid grey;
+    border-radius: 30px;
+    margin: 50px;
+    background-color: lightgrey;
+    padding: 50px 150px;
+}
+
+#time{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.btn{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+#buttons{
+    text-align: center;
+}
+
+.radioBtn{
+    transform: scale(2);
+    margin: 15px;
+}
+
+#startFromInput{
+    text-align: center;
+    margin-left: 10px;
+}
+
+#startBtn{
+    border: 1px solid green;
+    background-color: lightgreen;
+}
+
+#stopBtn{
+    border: 1px solid red;
+    background-color: salmon;
+}
+#resetBtn{
+    border: 1px solid blue;
+    background-color: lightblue
+}

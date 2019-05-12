@@ -1,0 +1,19 @@
+<router-outlet></router-outlet>
+<div id="flex-container">
+  <div id="inputs-section">
+    <input type="radio" id="timerRadio" class="radioBtn" name="radioGroup">
+    <label for="timerRadio">Timer</label>
+    <input type="radio" id="countdownRadio" class="radioBtn" name="radioGroup">
+    <label for="countdownRadio">Countdown</label>
+    <input type="text" id="startFromInput" placeholder="Start from...">
+  </div>
+
+  <div id="watch-section">
+    <span id="time">{{ defaultStartTime }}</span>
+    <div id="buttons">
+      <button type="button" id="startBtn" class="btn">Start</button>
+      <button type="button" id="stopBtn" class="btn">Stop</button>
+      <button type="button" id="resetBtn" class="btn">Reset</button>
+    </div>
+  </div>
+</div>
