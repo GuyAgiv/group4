@@ -1,0 +1,20 @@
+img{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+#container {
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 20px 20px 20px 20px;
+    display: inline-block;
+}
+
+div.pic {
+    display: inline;
+}

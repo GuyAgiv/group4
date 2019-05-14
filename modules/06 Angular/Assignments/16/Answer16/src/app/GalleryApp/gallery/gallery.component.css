@@ -1,0 +1,14 @@
+#container {
+    text-align: center;
+    background: purple;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+#mainPicture
+{
+    margin-top: 40px;
+    height: 350px;
+    width: 350px;
+}

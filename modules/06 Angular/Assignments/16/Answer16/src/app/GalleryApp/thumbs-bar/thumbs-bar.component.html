@@ -1,0 +1,5 @@
+<div id="container">
+  <div class="pic" *ngFor="let img of images;let i = index">
+    <img [src]="img" [attr.data-index]='i' (click)="onImageClicked(m)" #m>
+  </div>
+</div>

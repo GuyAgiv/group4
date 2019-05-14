@@ -1,0 +1,18 @@
+.thumbNail{
+
+}
+img{
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    width: 15vw;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+h3,h4,h5{
+    margin: 0;
+    padding: 0;
+}

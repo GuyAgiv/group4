@@ -1,0 +1,12 @@
+<div id="container">
+  <div id="mainPictureContainer">
+
+    <app-arrow [arrowSign]="arrowLeftSign" [arrowName]="'left'" (changeImageByArrow)="onArrowPressed($event)"></app-arrow>
+
+    <img id="mainPicture" [src]="mainPicture.imgSrc">
+
+    <app-arrow [arrowSign]="arrowRightSign" [arrowName]="'right'" (changeImageByArrow)="onArrowPressed($event)"></app-arrow>
+
+    <app-thumbs-bar [images]="pictures" (pictureChosen)="onMainPictureChanged($event)"></app-thumbs-bar>
+  </div>
+</div>
