@@ -1,0 +1,15 @@
+<form *ngIf="!isSubmitted" (submit)="onSubmit(triviaForm)" #triviaForm="ngForm">
+  <app-question *ngFor="let question of questions;let i = index">
+    <div>
+      <h4>{{ question.questionTitle }}</h4>
+      <select>
+        <option *ngFor="let answer of question.answers;let i = index" >{{ answer }}</option>
+      </select>
+    </div>
+  </app-question>
+
+  <button type="submit">SUBMIT ME PLEASE :)</button>
+</form>
+
+
+<router-outlet></router-outlet>
